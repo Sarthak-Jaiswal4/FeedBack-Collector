@@ -12,6 +12,7 @@ module.exports = {
     RESEND_API_KEY:"re_T5yPHRrH_PXwQFBTB7XDNjx2KDNS7qugu",
     NEXT_AUTH:"cat",
     NEXTAUTH_SECRET:"CAT",
+    apiKey: "AIzaSyAJvsfOJfNBuDh4S4JedmEUiNRTzHKMHII"
   },
 }
  

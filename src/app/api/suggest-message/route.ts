@@ -1,7 +1,8 @@
 import { GoogleGenAI } from "@google/genai";
 
 export const runtime = 'edge';
-const ai = new GoogleGenAI({ apiKey: "AIzaSyAJvsfOJfNBuDh4S4JedmEUiNRTzHKMHII" });
+const ai = new GoogleGenAI({ apiKey: process.env.apiKey });
+
 
 export async function POST(req: Request) {
   try {

@@ -8,7 +8,6 @@ import { acceptmessageSchema } from '@/Schemas/acceptMessageSchema'
 import { ApiResponse } from '@/types/Apiresponse'
 import { zodResolver } from '@hookform/resolvers/zod'
 import axios from 'axios'
-import bcrypt from 'bcryptjs'
 import { Loader2, RefreshCcw } from 'lucide-react'
 import { User } from 'next-auth'
 import { useSession } from 'next-auth/react'
@@ -87,15 +86,15 @@ function page() {
         }
     }
 
-    const {username,_id}=session?.user as User
-    const baseurl=`${window.location.protocol}//${window.location.host}`
-    const profileurl=`${baseurl}/u/${_id}`
-
     if(!session || !session.user){
         return<>
             <div>Please Login</div>
         </>
     }
+
+    const {username,_id}=session.user as User
+    const baseurl=`${window.location.protocol}//${window.location.host}`
+    const profileurl=`${baseurl}/u/${_id}`
 
     const copyToClipboard=()=>{
         navigator.clipboard.writeText(profileurl)
